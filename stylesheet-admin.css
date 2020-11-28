@@ -1,0 +1,434 @@
+@import url("https://fonts.googleapis.com/css2?family=Lemon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Brawler&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap");
+
+:root{
+  --background: rgba(0, 0, 0, 0.9);
+  --fontColor: rgba(243, 145, 59, 0.8);
+  --iconColor: rgb(218, 106, 8);
+  --fontFamily1: 'Lemon', cursive;
+  --fontFamily2: 'Brawler', serif;
+  --fontFamily3: 'Oleo Script', cursive;
+}
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+
+header{
+  width: 100%;
+  background: var(--background);
+  position: sticky;
+  position:fixed;
+  z-index: 999;
+  text-align: center;
+  top: 0;
+}
+
+.nav-toggle{
+  display:none;
+}
+
+.nav-toggle-label{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after{
+  display: block;
+  background: var(--fontColor);
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after{
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before{
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after{
+  top: 7px;
+}
+
+nav{
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: var(--background);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 200ms ease-in-out
+}
+
+nav ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li{
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a{
+  color: var(--fontColor);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-family: var(--fontFamily2);
+  /* text-transform: uppercase; */
+  opacity: 0;
+  transition: opacity 100ms ease-in-out;
+}
+
+nav a:hover{
+  color: white;
+}
+
+.nav-toggle:checked ~ nav{
+  transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a{
+  opacity: 1;
+  transition: opacity 150ms ease-in-out 150ms;
+}
+
+.logo a:link, .logo a:visited, .logo a:hover, .logo a:active{
+  color: var(--fontColor);
+  font-family: var(--fontFamily1);
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.banner-wrapper-index{
+  background-color: white;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-image: url("photos/banner12.jpg");
+}
+
+.site-title h1{
+  margin: 0.5em auto;
+  text-align: center;
+  font-size: 3rem;
+  font-family: var(--fontFamily2);
+  color: rgba(0, 0, 0, 0.80);
+}
+
+body {
+  margin: 0;
+}
+
+#page {
+  max-width: 90%;
+  margin: auto;
+}
+
+/* footer CSS */
+
+footer{
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: var(--background);
+}
+
+.footer-wrapper{
+  padding: 0.75em 0 0.75em;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.footer-phone{
+  padding: 0 0.25em;
+  font-size: 20px;
+  text-align: center;
+  color: var(--fontColor);
+}
+
+.footer-logo{
+  padding: 0.25em;
+  display: flex;
+  margin: 0 auto;
+}
+
+.footer-logo a{
+  padding: 0 1em;
+}
+
+.footer-text{
+  padding: 0 0.5em 0.5em;
+  margin: 0 auto;
+  color: var(--fontColor);
+  font-size: 10px;
+  font-family: var(--fontFamily1);
+}
+
+#footer-copyright{
+  font-size: 10px;
+  font-family: var(--fontFamily2);
+  color: var(--fontColor);
+  text-align: center;
+}
+
+/* ---- MENU CSS ---- */
+
+.page-description{
+  font-size: 1em;
+  font-weight: bold;
+  color: rgba(87, 68, 52, 0.651);
+  font-family: var(--fontFamily2);
+  text-align: center;
+}
+
+table,
+th,
+td {
+    border: 3px solid black;
+}
+
+table {
+  font-family: var(--fontFamily2);
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid rgb(218, 106, 8);
+  margin: 0;
+}
+
+th, td {
+  padding: 20px;
+  border: 2px solid rgb(218, 106, 8);
+}
+
+.cooking-icon{
+  display: flex;
+  justify-content: center;
+  padding-top: 2em;
+}
+
+.search-bar form{
+  font-family: var(--fontFamily2);
+  padding: 1em 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-search{
+    width: 100%;
+}
+
+input[type=date],
+input[type=time], 
+input[type=tel], 
+input[type=text], select {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit]{
+  font-family: var(--fontFamily2);
+  background-color: rgba(218, 106, 8, 0.8);
+  font-size: 1em;
+  font-weight: bolder;
+  border: none;
+  color: black;
+  padding: 10px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 100px;
+}
+
+input[type=submit]:hover{
+  opacity: 0.8;
+}
+
+input[type=submit]:active{
+  opacity: 1;
+}
+
+
+@media only screen and (max-width: 760px){
+  /* Force table to not be like tables anymore */
+table, thead, tbody, th, td, tr { 
+  display: block; 
+}
+
+/* Hide table headers (but not display: none;, for accessibility) */
+thead tr { 
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+tr { border: 2px solid rgb(179, 68, 17); }
+
+td { 
+  /* Behave  like a "row" */
+  border: none;
+  border-bottom: 1px solid #eee; 
+  position: relative;
+  padding-left: 50%; 
+}
+
+td:before { 
+  /* Now like a table header */
+  position: absolute;
+  /* Top/left values mimic padding */
+  top: 6px;
+  left: 6px;
+  width: 45%; 
+  padding-right: 10px; 
+  white-space: nowrap;
+}
+
+/*
+Label the data
+*/
+td:nth-of-type(1):before { content: "Order ID"; }
+td:nth-of-type(2):before { content: "Guest name"; }
+td:nth-of-type(3):before { content: "Dishes"; }
+td:nth-of-type(4):before { content: "Price"; }
+td:nth-of-type(5):before { content: "Pickup Time"; }
+td:nth-of-type(6):before { content: "Phone"; }
+}
+
+@media screen and (min-width: 700px){
+
+  #page {
+    max-width: 90%;
+    margin: auto;
+  }
+
+
+  .price-wrapper{
+    flex:1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .price{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 800px) {
+
+  #page {
+    max-width: 85%;
+    margin: auto;
+  }
+
+  .nav-toggle-label{
+    display: none;
+  }
+
+  header{
+    display: grid;
+    grid-template-columns: 1.5fr auto minmax(600px, 3fr) 0.5fr;
+  }
+
+  .logo{
+    grid-column: 1 / 3;
+  }
+
+  nav{
+    all: unset;
+    grid-column: 3/4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav ul{
+    display: flex;
+  }
+
+  nav li{
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+
+  nav a{
+    opacity: 1;
+    position: relative;
+  }
+
+  nav a::before{
+    content: '';
+    display: block;
+    height: 5px;
+    background: white;
+    position: absolute;
+    top: -.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 150ms;
+  }
+
+  nav a:hover::before{
+    transform: scale(1,1);
+  }
+
+  .logo a:link, .logo a:visited, .logo a:hover, .logo a:active{
+    color: var(--fontColor);
+    font-family: var(--fontFamily1);
+    text-decoration: none;
+    font-size: 1.25em;
+  }
+
+  .banner-wrapper-index{
+    background-color: white;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-image: url("photos/banner12.jpg");
+  }
+
+  .site-title h1{
+    margin: 0.65em auto;
+    text-align: center;
+    font-size: 5rem;
+    font-family: var(--fontFamily2);
+    color: rgba(0, 0, 0, 0.80);
+  }
+
+}
+
+@media screen and (min-width: 1400px){
+  #page{
+    width: 50%;
+  }
+}
